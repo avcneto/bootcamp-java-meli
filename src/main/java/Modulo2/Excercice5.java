@@ -1,4 +1,4 @@
-package Class16122021;
+package Modulo2;
 
 import java.util.Scanner;
 
@@ -10,10 +10,10 @@ public class Excercice5 {
         System.out.print("Enter the quantity: ");
         quantity = reader.nextInt();
 
-        System.out.print("Digite a quantidade de dígitos: ");
+        System.out.print("Enter the digit quantity: ");
         int digitNumber = reader.nextInt();
 
-        System.out.print("Dígito: ");
+        System.out.print("digit: ");
         int digit = reader.nextInt();
         reader.close();
 

@@ -1,4 +1,4 @@
-package Class16122021;
+package Modulo2;
 
 import java.util.Scanner;
 
