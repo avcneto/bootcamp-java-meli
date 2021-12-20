@@ -1,4 +1,5 @@
-package module3.aula_2_tt;
+package module3.aula_2_tt_exercice_1;
+
 
 import com.sun.jdi.request.InvalidRequestStateException;
 
@@ -18,6 +19,4 @@ public class Password {
             throw new InvalidRequestStateException("Invalid password!!!");
         }
     }
-
-
 }

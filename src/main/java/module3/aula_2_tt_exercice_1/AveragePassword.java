@@ -1,14 +1,13 @@
-package module3.aula_2_tt;
+package module3.aula_2_tt_exercice_1;
 
 import java.util.Scanner;
 
-public class StrongPassword extends Password {
+public class AveragePassword extends Password {
     //.{4,} at least 4 characters
     //(?=.*[0-9]) a digit must occur at least once
-    //(?=.*[A-Z]) a capital letter must occur at least once
-    private static final String PASSWORD_REGEX = "(?=.*[0-9])(?=.*[A-Z]).{4,}";
+    private static final String PASSWORD_REGEX = "(?=.*[0-9]).{4,}";
 
-    public StrongPassword(String regex) {
+    public AveragePassword(String regex) {
         super(regex);
     }
 
@@ -18,7 +17,7 @@ public class StrongPassword extends Password {
     }
 
     public static void main(String[] args) {
-        Password p = new Password(PASSWORD_REGEX);
+        AveragePassword p = new AveragePassword(PASSWORD_REGEX);
 
         Scanner reader = new Scanner(System.in);
         System.out.print("Enter your password: ");
