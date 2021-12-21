@@ -14,42 +14,42 @@ public class RadixSort {
         return str;
     }
 
-    public static String[] sortList(List<String> stringArrayByZero) {
-        String[] anArray = new String[10];
+    public static String[][] sortList(List<String> stringArrayByZero) {
+        String[][] anArray = new String[10][2];
 
         for (int i = 1; i < 3; i++) {
             for (String str : stringArrayByZero) {
                 char lastNumber = str.charAt(str.length() - i);
                 switch (lastNumber) {
                     case '0':
-                        anArray[0] = str;
+                        anArray[0][i - 1] = str;
                         break;
                     case '1':
-                        anArray[1] = str;
+                        anArray[1][i - 1] = str;
                         break;
                     case '2':
-                        anArray[2] = str;
+                        anArray[2][i - 1] = str;
                         break;
                     case '3':
-                        anArray[3] = str;
+                        anArray[3][i - 1] = str;
                         break;
                     case '4':
-                        anArray[4] = str;
+                        anArray[4][i - 1] = str;
                         break;
                     case '5':
-                        anArray[5] = str;
+                        anArray[5][i - 1] = str;
                         break;
                     case '6':
-                        anArray[6] = str;
+                        anArray[6][i - 1] = str;
                         break;
                     case '7':
-                        anArray[7] = str;
+                        anArray[7][i - 1] = str;
                         break;
                     case '8':
-                        anArray[8] = str;
+                        anArray[8][i - 1] = str;
                         break;
                     case '9':
-                        anArray[9] = str;
+                        anArray[9][i - 1] = str;
                         break;
                 }
             }
@@ -79,12 +79,20 @@ public class RadixSort {
             stringArrayByZero.add(addLeadingZero(largest, str));
         }
 
-        String[] sort = sortList(stringArrayByZero);
+        String[][] result = sortList(stringArrayByZero);
 
-        for (String s : sort) {
-            System.out.println(s);
+        printRadxSort(result);
+
+    }
+
+    public static void printRadxSort(String[][] result) {
+        for (int i = 0; i < result.length; i++) {
+            System.out.print("L" + i + 1 + ": ");
+            for (int j = 0; j < 2; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
         }
-
     }
 
     public static void main(String[] args) {
