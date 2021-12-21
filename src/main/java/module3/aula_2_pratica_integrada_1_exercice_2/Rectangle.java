@@ -1,4 +1,4 @@
-package module3.aula_2_tt_exercice_2;
+package module3.aula_2_pratica_integrada_1_exercice_2;
 
 public class Rectangle extends GeometricFigure {
     private double side;

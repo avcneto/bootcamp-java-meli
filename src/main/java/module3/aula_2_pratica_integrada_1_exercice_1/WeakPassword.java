@@ -1,13 +1,12 @@
-package module3.aula_2_tt_exercice_1;
+package module3.aula_2_pratica_integrada_1_exercice_1;
 
 import java.util.Scanner;
 
-public class AveragePassword extends Password {
+public class WeakPassword extends Password {
     //.{4,} at least 4 characters
-    //(?=.*[0-9]) a digit must occur at least once
-    private static final String PASSWORD_REGEX = "(?=.*[0-9]).{4,}";
+    private static final String PASSWORD_REGEX = ".{4,}";
 
-    public AveragePassword(String regex) {
+    public WeakPassword(String regex) {
         super(regex);
     }
 
@@ -17,7 +16,7 @@ public class AveragePassword extends Password {
     }
 
     public static void main(String[] args) {
-        AveragePassword p = new AveragePassword(PASSWORD_REGEX);
+        WeakPassword p = new WeakPassword(PASSWORD_REGEX);
 
         Scanner reader = new Scanner(System.in);
         System.out.print("Enter your password: ");

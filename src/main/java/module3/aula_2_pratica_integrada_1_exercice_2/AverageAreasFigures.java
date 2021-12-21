@@ -1,9 +1,9 @@
-package module3.aula_2_tt_exercice_2;
+package module3.aula_2_pratica_integrada_1_exercice_2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static module3.aula_2_tt_exercice_2.Util.averageArea;
+import static module3.aula_2_pratica_integrada_1_exercice_2.Util.averageArea;
 
 public class AverageAreasFigures {
     public static void main(String[] args) {

@@ -1,12 +1,14 @@
-package module3.aula_2_tt_exercice_1;
+package module3.aula_2_pratica_integrada_1_exercice_1;
 
 import java.util.Scanner;
 
-public class WeakPassword extends Password {
+public class StrongPassword extends Password {
     //.{4,} at least 4 characters
-    private static final String PASSWORD_REGEX = ".{4,}";
+    //(?=.*[0-9]) a digit must occur at least once
+    //(?=.*[A-Z]) a capital letter must occur at least once
+    private static final String PASSWORD_REGEX = "(?=.*[0-9])(?=.*[A-Z]).{4,}";
 
-    public WeakPassword(String regex) {
+    public StrongPassword(String regex) {
         super(regex);
     }
 
@@ -16,7 +18,7 @@ public class WeakPassword extends Password {
     }
 
     public static void main(String[] args) {
-        WeakPassword p = new WeakPassword(PASSWORD_REGEX);
+        StrongPassword p = new StrongPassword(PASSWORD_REGEX);
 
         Scanner reader = new Scanner(System.in);
         System.out.print("Enter your password: ");
