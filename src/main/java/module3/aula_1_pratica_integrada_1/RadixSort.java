@@ -1,6 +1,7 @@
 package module3.aula_1_pratica_integrada_1;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class RadixSort {
@@ -14,48 +15,71 @@ public class RadixSort {
         return str;
     }
 
-    public static String[][] sortList(List<String> stringArrayByZero) {
-        String[][] anArray = new String[10][2];
+    public static void addnewValue(int key, HashMap<String, ArrayList<String>> map, String value) {
+        if (map.containsKey("L" + key)) {
+            boolean addValue = map.get("L" + key).stream()
+                    .noneMatch(it -> it.equalsIgnoreCase(value));
+            if (addValue) {
+                map.get("L" + key).add(value);
+            }
+        }
+    }
 
-        for (int i = 1; i < 3; i++) {
+    public static HashMap<String, ArrayList<String>> sortList(List<String> stringArrayByZero, int largest) {
+        HashMap<String, ArrayList<String>> map = new HashMap<>();
+        map.put("L0", new ArrayList<>());
+        map.put("L1", new ArrayList<>());
+        map.put("L2", new ArrayList<>());
+        map.put("L3", new ArrayList<>());
+        map.put("L4", new ArrayList<>());
+        map.put("L5", new ArrayList<>());
+        map.put("L6", new ArrayList<>());
+        map.put("L7", new ArrayList<>());
+        map.put("L8", new ArrayList<>());
+        map.put("L9", new ArrayList<>());
+
+        for (int i = 1; i < largest + 1; i++) {
             for (String str : stringArrayByZero) {
                 char lastNumber = str.charAt(str.length() - i);
                 switch (lastNumber) {
                     case '0':
-                        anArray[0][i - 1] = str;
+                        addnewValue(0, map, str);
                         break;
                     case '1':
-                        anArray[1][i - 1] = str;
+                        addnewValue(1, map, str);
                         break;
                     case '2':
-                        anArray[2][i - 1] = str;
+                        addnewValue(2, map, str);
                         break;
                     case '3':
-                        anArray[3][i - 1] = str;
+                        addnewValue(3, map, str);
                         break;
                     case '4':
-                        anArray[4][i - 1] = str;
+                        addnewValue(4, map, str);
                         break;
                     case '5':
-                        anArray[5][i - 1] = str;
+                        addnewValue(5, map, str);
                         break;
                     case '6':
-                        anArray[6][i - 1] = str;
+                        addnewValue(6, map, str);
                         break;
                     case '7':
-                        anArray[7][i - 1] = str;
+                        addnewValue(7, map, str);
                         break;
                     case '8':
-                        anArray[8][i - 1] = str;
+                        addnewValue(8, map, str);
                         break;
                     case '9':
-                        anArray[9][i - 1] = str;
+                        addnewValue(9, map, str);
                         break;
                 }
             }
         }
-        return anArray;
+        map.forEach((k, v) -> v.sort(String::compareTo));
+
+        return map;
     }
+
 
     public static void radxSort(int iArr[]) {
         List<String> stringArray = new ArrayList<>();
@@ -79,19 +103,8 @@ public class RadixSort {
             stringArrayByZero.add(addLeadingZero(largest, str));
         }
 
-        String[][] result = sortList(stringArrayByZero);
-
-        printRadxSort(result);
-    }
-
-    public static void printRadxSort(String[][] result) {
-        for (int i = 0; i < result.length; i++) {
-            System.out.print("L" + (i + 1) + ": ");
-            for (int j = 0; j < 2; j++) {
-                System.out.print(result[i][j] + " ");
-            }
-            System.out.println();
-        }
+        HashMap<String, ArrayList<String>> result = sortList(stringArrayByZero, largest);
+        result.forEach((k, v) -> System.out.println((k + ":" + v)));
     }
 
     public static void main(String[] args) {
